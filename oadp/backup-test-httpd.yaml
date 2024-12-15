@@ -1,0 +1,20 @@
+apiVersion: console.openshift.io/v1
+kind: ConsoleYAMLSample
+metadata:
+  name: backup-test-httpd
+spec:
+  description: backup-test-httpd
+  targetResource:
+    apiVersion: velero.io/v1
+    kind: Backup
+  title: backup-test-httpd
+  yaml: |
+    apiVersion: velero.io/v1
+    kind: Backup
+    metadata:
+      namespace: openshift-adp
+      name: backup-test-httpd
+    spec:
+      defaultVolumesToRestic: true
+      includedNamespaces:
+        - test-httpd
