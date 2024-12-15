@@ -1,0 +1,23 @@
+apiVersion: console.openshift.io/v1
+kind: ConsoleYAMLSample
+metadata:
+  name: 2-resource-5-pvc1g
+spec:
+  description: PersistentVolumeClaim
+  targetResource:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+  title: 2-resource-5-pvc1g
+  yaml: |
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: 2-resource-5-pvc1g
+      namespace: resource-quota
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      volumeMode: Filesystem
+      resources:
+        requests:
+          storage: 1Gi
