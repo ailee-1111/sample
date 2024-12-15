@@ -1,0 +1,21 @@
+apiVersion: console.openshift.io/v1
+kind: ConsoleYAMLSample
+metadata:
+  name: restore-test-httpd
+spec:
+  description: restore-test-httpd
+  targetResource:
+    apiVersion: velero.io/v1
+    kind: Restore
+  title: restore-test-httpd
+  yaml: |
+    apiVersion: velero.io/v1
+    kind: Restore
+    metadata:
+      namespace: openshift-adp
+      name: restore-test-httpd
+    spec:
+      backupName: backup-test-httpd
+      restorePVs: true
+      includedNamespaces:
+        - test-httpd
